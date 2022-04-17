@@ -1,0 +1,35 @@
+{{!--
+* WEB322 – Assignment 06
+* I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part
+* of this assignment has been copied manually or electronically from any other source
+* (including 3rd party web sites) or distributed to other students.
+*
+* Name: Mann Patel Student ID: 134633205 Date: 02/12/2021
+*
+* Online (Heroku) Link: https://salty-refuge-15050.herokuapp.com/
+--}}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>{{session.user.userName}} ( {{session.user.email}} ) History</h2>
+        <hr>
+        <div class="table-responsive">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>Login Date/Time</th>
+                        <th>Client Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each session.user.loginHistory}}
+                    <tr>
+                        <td>{{dateTime}}</td>
+                        <td>{{userAgent}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

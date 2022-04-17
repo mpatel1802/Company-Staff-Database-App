@@ -1,0 +1,41 @@
+{{!--
+* WEB322 – Assignment 06
+* I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part
+* of this assignment has been copied manually or electronically from any other source
+* (including 3rd party web sites) or distributed to other students.
+*
+* Name: Mann Patel Student ID: 134633205 Date: 02/12/2021
+*
+* Online (Heroku) Link: https://salty-refuge-15050.herokuapp.com/
+--}}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Departments <a href="/departments/add" class="btn btn-success pull-right">Add New Department</a></h2>
+        <hr />
+        <div class="table-responsive">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>Department Number</th>
+                        <th>Department Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each departments}}
+                    <tr>
+                        <td><a href="/employees?department={{this.departmentId}}">{{this.departmentId}}</a></td>
+                        <td><a href="/department/{{departmentId}}">{{departmentName}}</a></td>
+                        <td><a class="btn btn-danger" href="/departments/delete/{{this.departmentId}}">remove</a></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{#unless departments}}
+    <div class="col-md-12 text-center">
+        <strong>{{message}}</strong>
+    </div>
+    {{/unless}}
+</div>

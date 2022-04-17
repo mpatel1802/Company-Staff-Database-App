@@ -1,0 +1,28 @@
+{{!--
+* WEB322 – Assignment 06
+* I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part
+* of this assignment has been copied manually or electronically from any other source
+* (including 3rd party web sites) or distributed to other students.
+*
+* Name: Mann Patel Student ID: 134633205 Date: 02/12/2021
+*
+* Online (Heroku) Link: https://salty-refuge-15050.herokuapp.com/
+--}}
+
+<div class="row">
+  <div class="col-md-12">
+    <h2>Images <a href="/images/add" class="btn btn-success pull-right">Add New Image</a></h2>
+    <hr />
+  </div>
+  {{#each data}}
+  <div class="col-md-4">
+    <img id="img" src="/images/uploaded/{{this}}" class="img-responsive img-thumbnail" />
+  </div>
+  {{else}}
+
+  <div class="col-md-12 text-center">
+    <strong>No Images Available</strong>
+  </div>
+
+  {{/each}}
+</div>
